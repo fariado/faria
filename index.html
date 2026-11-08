@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Faria · Carteras para las que lo llevan TODO</title>
+<meta name="description" content="Carteras originales, sin réplicas ni monogramas. Pide la tuya por WhatsApp. Envíos a todo República Dominicana.">
+<meta name="theme-color" content="#5c0601">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
+<link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:title" content="Faria · Para las que lo llevan TODO">
+<meta property="og:description" content="Carteras sin réplica y sin monograma. Pide por WhatsApp, envíos a todo el país.">
+<meta property="og:image" content="img/la-protagonista.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --vino:#5c0601; --vino-2:#7a0d06; --gris:#686C6A;
+    --crema:#F9F6F0; --blanco:#FEFDF9; --tinta:#2a2423; --linea:#e7e0d6;
+    --wa:#1f9d55;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"DM Sans",system-ui,sans-serif;background:var(--crema);color:var(--tinta);line-height:1.5;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%;height:auto}
+  section{scroll-margin-top:56px}
+  a{color:inherit}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+
+  /* Barra superior */
+  .top{position:sticky;top:0;z-index:20;background:var(--vino);color:var(--crema)}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+  .logo{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:26px;letter-spacing:.18em;text-decoration:none}
+  .top nav{display:flex;gap:18px;font-size:14px}
+  .top nav a{text-decoration:none;opacity:.85}
+  .top nav a:hover{opacity:1}
+
+  /* Portada */
+  .hero{background:var(--vino);color:var(--crema);padding:40px 0 56px;overflow:hidden}
+  .hero .wrap{display:grid;gap:28px;align-items:center}
+  .hero h1{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(38px,9vw,64px);line-height:1.02}
+  .hero h1 em{font-style:italic;color:#f1d6c7}
+  .hero p{margin-top:14px;font-size:16px;max-width:30em;opacity:.9}
+  .hero .acciones{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .hero-fotos{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .hero-fotos img{border-radius:14px;aspect-ratio:4/5;object-fit:cover}
+  .hero-fotos img:nth-child(2){margin-top:28px}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:12px 20px;font:600 15px "DM Sans",sans-serif;text-decoration:none;cursor:pointer;transition:transform .15s,background .15s}
+  .btn:active{transform:scale(.97)}
+  .btn svg{width:18px;height:18px;flex:none;fill:currentColor}
+  .btn-crema{background:var(--crema);color:var(--vino)}
+  .btn-borde{background:transparent;color:var(--crema);border:1.5px solid rgba(249,246,240,.6)}
+  .btn-vino{background:var(--vino);color:var(--crema);width:100%}
+  .btn-vino:hover{background:var(--vino-2)}
+
+  /* Franja de confianza */
+  .franja{background:var(--blanco);border-bottom:1px solid var(--linea)}
+  .franja ul{list-style:none;display:flex;gap:22px;overflow-x:auto;padding:14px 16px;max-width:1120px;margin:0 auto;font-size:13.5px;color:var(--gris);scrollbar-width:none}
+  .franja ul::-webkit-scrollbar{display:none}
+  .franja li{white-space:nowrap;display:flex;align-items:center;gap:7px}
+  .franja li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--vino)}
+
+  /* Catálogo */
+  section{padding:44px 0}
+  .titulo{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(30px,6vw,42px);line-height:1.1;color:var(--vino)}
+  .sub{color:var(--gris);margin-top:6px;font-size:15px}
+
+  .filtros{position:sticky;top:56px;z-index:10;background:var(--crema);padding:14px 0 12px;margin-top:10px}
+  .filtros div{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+  .filtros div::-webkit-scrollbar{display:none}
+  .chip{flex:none;border:1.5px solid var(--linea);background:var(--blanco);color:var(--tinta);border-radius:999px;padding:8px 16px;font:500 14px "DM Sans",sans-serif;cursor:pointer}
+  .chip[aria-pressed="true"]{background:var(--vino);border-color:var(--vino);color:var(--crema)}
+
+  .rejilla{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 12px;margin-top:6px}
+  @media (min-width:720px){.rejilla{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 20px}}
+  @media (min-width:1000px){.rejilla{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+  .cartera{display:flex;flex-direction:column}
+  .fotos{position:relative;border-radius:14px;overflow:hidden;background:var(--blanco)}
+  .carrusel{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+  .carrusel::-webkit-scrollbar{display:none}
+  .carrusel img{flex:0 0 100%;width:100%;min-width:0;aspect-ratio:4/5;object-fit:cover;scroll-snap-align:start;cursor:zoom-in}
+  .puntos{position:absolute;bottom:8px;left:0;right:0;display:flex;justify-content:center;gap:5px}
+  .puntos span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.55);box-shadow:0 0 2px rgba(0,0,0,.3)}
+  .puntos span.on{background:#fff}
+  .sello{position:absolute;top:8px;left:8px;background:var(--blanco);color:var(--vino);font-size:11.5px;font-weight:700;padding:4px 9px;border-radius:999px;letter-spacing:.02em}
+  .cartera.agotada .carrusel img{filter:grayscale(.8);opacity:.6}
+  .cartera h3{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:21px;line-height:1.15;margin-top:10px}
+  .desc{font-size:13.5px;color:var(--gris);margin-top:3px;flex:1}
+  .precio{font-weight:700;font-size:17px;color:var(--vino);margin:8px 0 10px}
+  .cartera .btn{padding:11px 10px;font-size:14px}
+  .corto{display:none}
+  @media (max-width:520px){.largo{display:none}.corto{display:inline}}
+  .cartera.agotada .btn{background:transparent;color:var(--vino);border:1.5px solid var(--vino)}
+
+  /* Cómo comprar */
+  .pasos{list-style:none;display:grid;gap:12px;margin-top:22px;counter-reset:paso}
+  @media (min-width:720px){.pasos{grid-template-columns:repeat(4,1fr)}}
+  .pasos li{background:var(--blanco);border:1px solid var(--linea);border-radius:14px;padding:18px;counter-increment:paso}
+  .pasos li::before{content:counter(paso);display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--vino);color:var(--crema);font-weight:700;font-size:14px;margin-bottom:10px}
+  .pasos b{display:block;font-size:15.5px}
+  .pasos span{font-size:14px;color:var(--gris)}
+
+  /* Por qué Faria */
+  .porque{background:var(--blanco);border-block:1px solid var(--linea)}
+  .porque p{max-width:38em;margin-top:12px;font-size:16px}
+
+  /* Preguntas */
+  details{border-bottom:1px solid var(--linea);padding:16px 0}
+  details:first-of-type{margin-top:16px;border-top:1px solid var(--linea)}
+  summary{font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";color:var(--vino);font-size:22px;line-height:1}
+  details[open] summary::after{content:"–"}
+  details p{margin-top:8px;color:var(--gris);font-size:15px}
+
+  footer{background:var(--vino);color:var(--crema);padding:40px 0 100px;text-align:center}
+  footer .logo{font-size:30px;display:block}
+  footer p{opacity:.85;font-size:14px;margin-top:6px}
+  .redes{display:flex;justify-content:center;gap:18px;margin-top:16px;font-size:14px}
+
+  /* Botón flotante */
+  .flotante{position:fixed;right:16px;bottom:18px;z-index:30;width:58px;height:58px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+  .flotante svg{width:30px;height:30px;fill:#fff}
+
+  /* Foto grande */
+  .visor{position:fixed;inset:0;z-index:40;background:rgba(20,10,9,.92);display:none;align-items:center;justify-content:center;padding:16px}
+  .visor.abierto{display:flex}
+  .visor img{max-height:88vh;border-radius:12px}
+  .visor button{position:absolute;top:14px;right:16px;background:none;border:0;color:#fff;font-size:34px;cursor:pointer;line-height:1}
+
+  @media (min-width:860px){
+    .hero{padding:64px 0 72px}
+    .hero .wrap{grid-template-columns:1.1fr 1fr}
+  }
+  @media (max-width:520px){
+    .top nav{display:none}
+    .cartera h3{font-size:19px}
+    .desc{font-size:12.5px}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#">FARIA</a>
+    <nav>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#comprar">Cómo comprar</a>
+      <a href="#preguntas">Preguntas</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Para las que lo llevan <em>TODO</em></h1>
+        <p>Laptop, cargador, botella, maquillaje y esas tres cosas que no sabes por qué cargas. Carteras que aguantan tu día, sin réplica y sin monograma.</p>
+        <div class="acciones">
+          <a class="btn btn-crema" href="#catalogo">Ver carteras</a>
+          <a class="btn btn-borde js-wa" data-msg="Hola Faria, quiero información sobre sus carteras.">Escríbenos</a>
+        </div>
+      </div>
+      <div class="hero-fotos">
+        <img src="img/la-protagonista.jpg" alt="Valentina, tote color vino" width="800" height="1000">
+        <img src="img/la-rosa.jpg" alt="Peonía, cartera de hombro rosa claro" width="800" height="1000">
+      </div>
+    </div>
+  </div>
+
+  <div class="franja">
+    <ul>
+      <li>Ni réplica, ni deuda</li>
+      <li>Envíos a todo el país</li>
+      <li>Piezas limitadas</li>
+      <li>Pides por WhatsApp</li>
+    </ul>
+  </div>
+
+  <section id="catalogo">
+    <div class="wrap">
+      <h2 class="titulo">La colección</h2>
+      <p class="sub">Casi todas son piezas únicas. Toca la foto para verla grande.</p>
+      <div class="filtros">
+        <div role="group" aria-label="Filtrar carteras">
+          <button class="chip" data-filtro="todas" aria-pressed="true">Todas</button>
+          <button class="chip" data-filtro="trabajo" aria-pressed="false">Para trabajar</button>
+          <button class="chip" data-filtro="diario" aria-pressed="false">Día a día</button>
+          <button class="chip" data-filtro="salidas" aria-pressed="false">Para salir</button>
+        </div>
+      </div>
+      <ul class="rejilla" id="rejilla"></ul>
+    </div>
+  </section>
+
+  <section id="comprar">
+    <div class="wrap">
+      <h2 class="titulo">Cómo comprar</h2>
+      <ol class="pasos">
+        <li><b>Elige tu cartera</b><span>Toca "Pedir por WhatsApp" y el mensaje te sale listo.</span></li>
+        <li><b>Te confirmamos</b><span>Te decimos si está disponible y cuánto sale el envío a tu zona.</span></li>
+        <li><b>Pagas por transferencia</b><span>Solo trabajamos con transferencia, antes de la entrega.</span></li>
+        <li><b>Te llega</b><span>Enviamos a todo el país. El costo del envío es adicional.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="porque">
+    <div class="wrap">
+      <h2 class="titulo">Ni réplica, ni deuda</h2>
+      <p>Aquí casi todo es monograma: o compras la réplica o te endeudas por la original. Faria es la opción del medio: carteras bonitas, amplias y bien hechas, que no copian a ninguna marca y que no te cuestan un sueldo.</p>
+    </div>
+  </section>
+
+  <section id="preguntas">
+    <div class="wrap">
+      <h2 class="titulo">Preguntas frecuentes</h2>
+      <details><summary>¿Son réplicas?</summary><p>No. Ninguna cartera de Faria copia el diseño ni el logo de otra marca.</p></details>
+      <details><summary>¿Cómo pago?</summary><p>Solo por transferencia bancaria, antes de la entrega. Te enviamos los datos por WhatsApp.</p></details>
+      <details><summary>¿Hacen envíos fuera de Santo Domingo?</summary><p>Sí, a todo el país. El costo del envío es adicional y depende de tu zona.</p></details>
+      <details><summary>¿Y si la que quiero está agotada?</summary><p>Toca "Avísame si vuelve" y te escribimos si llega otra igual o parecida.</p></details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span class="logo">FARIA</span>
+  <p>Para las que lo llevan TODO · República Dominicana</p>
+  <p>WhatsApp 809-474-2976</p>
+  <div class="redes" id="redes"></div>
+</footer>
+
+<a class="flotante js-wa" data-msg="Hola Faria, quiero información sobre sus carteras." aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4c-1-1.6-1.5-3.3-1.5-5.2C2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zm8.4-18.2C18.2 1.3 15.2 0 12 0 5.4 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.7c1.7.9 3.7 1.4 5.7 1.4 6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.5-8.4z"/></svg>
+</a>
+
+<div class="visor" id="visor" role="dialog" aria-label="Foto ampliada">
+  <button type="button" aria-label="Cerrar">&times;</button>
+  <img alt="">
+</div>
+
+<script>
+  /* =====================================================
+     AQUÍ EDITAS TU CATÁLOGO
+     - quedan: cuántas te quedan. Con 0 sale "Agotada".
+     - fotos: los nombres de las fotos dentro de la carpeta img.
+       Si una cartera no tiene foto todavía (fotos: []), no se muestra.
+     - uso: "trabajo", "diario" y/o "salidas" (para los filtros).
+     ===================================================== */
+  const WHATSAPP = "18094742976";
+
+  const INSTAGRAM = ""; // pega aquí el link de tu Instagram
+  const TIKTOK = "";    // pega aquí el link de tu TikTok
+
+  const carteras = [
+    { nombre: "Valentina", desc: "Tote estructurada color vino, con acabado tipo piel.", precio: 4495, quedan: 1, uso: ["trabajo", "salidas"], fotos: ["la-protagonista.jpg"] },
+    { nombre: "Victoria", desc: "Tote negra estructurada con charm decorativo.", precio: 3995, quedan: 1, uso: ["trabajo"], fotos: [] },
+    { nombre: "Karen", desc: "Bolso negro para laptop de hasta 15.6\", con bolsillo trasero y correa larga.", precio: 3495, quedan: 1, uso: ["trabajo"], fotos: ["la-laptop.jpg", "la-laptop-2.jpg", "la-laptop-3.jpg"] },
+    { nombre: "Scarlett", desc: "Cartera tipo baúl roja con acabado brillante, asas largas y correa cruzada.", precio: 2395, quedan: 2, uso: ["diario", "salidas"], fotos: ["la-vino-vintage.jpg", "la-vino-vintage-2.jpg"] },
+    { nombre: "Olivia", desc: "Tote color chocolate, amplia y estructurada, con asas largas.", precio: 2395, quedan: 2, uso: ["diario", "trabajo"], fotos: ["la-todo-cabe.jpg", "la-todo-cabe-2.jpg"] },
+    { nombre: "Sofía", desc: "Tote negra lisa, sencilla y espaciosa. Combina con todo.", precio: 2395, quedan: 2, uso: ["trabajo", "diario"], fotos: ["la-diaria.jpg", "la-diaria-2.jpg"] },
+    { nombre: "Elena", desc: "Tote negra con neceser a juego incluido.", precio: 1795, quedan: 2, uso: ["trabajo", "diario"], fotos: ["la-organizada-negra.jpg", "la-organizada-negra-3.jpg", "la-organizada-negra-2.jpg"] },
+    { nombre: "Begonia", desc: "Tote café oscuro con textura vintage, suave y amplia, con neceser a juego incluido.", precio: 1795, quedan: 2, uso: ["trabajo", "diario"], fotos: ["la-organizada-cafe.jpg", "la-organizada-cafe-3.jpg", "la-organizada-cafe-2.jpg"] },
+    { nombre: "Camila", desc: "Tote grande color camel con neceser a juego incluido.", precio: 1795, quedan: 2, uso: ["diario", "trabajo"], fotos: ["la-duo.jpg", "la-duo-2.jpg"] },
+    { nombre: "Abril", desc: "Set negro: tote, bolso pequeño y monedero.", precio: 1795, quedan: 1, uso: ["trabajo"], fotos: [] },
+    { nombre: "Ruby", desc: "Cartera de hombro roja con acabado brillante, correa ajustable y cadena plateada.", precio: 1795, quedan: 1, uso: ["salidas"], fotos: ["la-cadena-vino.jpg", "la-cadena-vino-2.jpg"] },
+    { nombre: "Luna", desc: "Cartera de hombro con textura tipo mezclilla y asa con nudos.", precio: 1795, quedan: 1, uso: ["salidas"], fotos: ["la-azul.jpg", "la-azul-3.jpg", "la-azul-2.jpg"] },
+    { nombre: "Paula", desc: "Tote marrón con hebilla dorada y neceser a juego incluido.", precio: 1300, quedan: 2, uso: ["diario"], fotos: ["la-cafe-relax.jpg", "la-cafe-relax-2.jpg"] },
+    { nombre: "Bianca", desc: "Cartera de hombro color vino con acabado brillante.", precio: 1295, quedan: 2, uso: ["diario", "salidas"], fotos: ["la-hobo-vino.jpg", "la-hobo-vino-2.jpg"] },
+    { nombre: "Kiara", desc: "Cartera de hombro tipo gamuza con estampado de leopardo, 30 x 13 x 8.5 cm.", precio: 1295, quedan: 2, uso: ["salidas"], fotos: ["la-leopardo.jpg", "la-leopardo-2.jpg"] },
+    { nombre: "Zoe", desc: "Cartera de hombro negra brillante, correa ajustable y cadena plateada.", precio: 1295, quedan: 1, uso: ["salidas"], fotos: ["la-cadena-negra.jpg", "la-cadena-negra-2.jpg"] },
+    { nombre: "Peonía", desc: "Cartera de hombro rosa claro con brillo perlado y cadena dorada.", precio: 1295, quedan: 1, uso: ["salidas"], fotos: ["la-rosa.jpg", "la-rosa-2.jpg"] },
+    { nombre: "Lola", desc: "Cartera de tela blanca con lunares y cadena trenzada.", precio: 1295, quedan: 1, uso: ["salidas"], fotos: ["la-lunares.jpg", "la-lunares-2.jpg"] }
+  ];
+
+  /* ===== De aquí para abajo no necesitas tocar nada ===== */
+  const enlaceWA = (msg) => "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg);
+  const pesos = (n) => "RD$" + n.toLocaleString("en-US");
+  const iconoWA = document.querySelector(".flotante svg").outerHTML;
+
+  document.querySelectorAll(".js-wa").forEach((a) => {
+    a.href = enlaceWA(a.dataset.msg);
+    a.target = "_blank";
+    a.rel = "noopener";
+  });
+
+  const redes = document.getElementById("redes");
+  [["Instagram", INSTAGRAM], ["TikTok", TIKTOK]].forEach(([nombre, url]) => {
+    if (!url) return;
+    const a = document.createElement("a");
+    a.href = url; a.target = "_blank"; a.rel = "noopener"; a.textContent = nombre;
+    redes.appendChild(a);
+  });
+
+  function sello(c) {
+    if (c.quedan <= 0) return "Agotada";
+    if (c.quedan === 1) return "Pieza única";
+    return "Quedan " + c.quedan;
+  }
+
+  const rejilla = document.getElementById("rejilla");
+
+  function pintar(filtro) {
+    rejilla.innerHTML = "";
+    carteras
+      .filter((c) => c.fotos.length > 0)
+      .filter((c) => filtro === "todas" || c.uso.includes(filtro))
+      .sort((a, b) => (a.quedan <= 0) - (b.quedan <= 0))
+      .forEach((c) => {
+        const agotada = c.quedan <= 0;
+        const msg = agotada
+          ? "Hola Faria, vi que la cartera " + c.nombre + " está agotada. ¿Me avisan si vuelve?"
+          : "Hola Faria, me interesa la cartera " + c.nombre + " (" + pesos(c.precio) + "). ¿Está disponible?";
+        const li = document.createElement("li");
+        li.className = "cartera" + (agotada ? " agotada" : "");
+        li.innerHTML =
+          '<div class="fotos">' +
+            '<span class="sello">' + sello(c) + "</span>" +
+            '<div class="carrusel">' +
+              c.fotos.map((f, i) => '<img src="img/' + f + '" alt="' + c.nombre + (i ? " (foto " + (i + 1) + ")" : "") + '" loading="lazy" width="800" height="1000">').join("") +
+            "</div>" +
+            (c.fotos.length > 1 ? '<div class="puntos">' + c.fotos.map((_, i) => '<span class="' + (i ? "" : "on") + '"></span>').join("") + "</div>" : "") +
+          "</div>" +
+          "<h3>" + c.nombre + "</h3>" +
+          '<p class="desc">' + c.desc + "</p>" +
+          '<p class="precio">' + pesos(c.precio) + "</p>" +
+          '<a class="btn btn-vino" href="' + enlaceWA(msg) + '" target="_blank" rel="noopener">' +
+            iconoWA + (agotada ? '<span class="largo">Avísame si vuelve</span><span class="corto">Avísame</span>' : '<span class="largo">Pedir por WhatsApp</span><span class="corto">La quiero</span>') +
+          "</a>";
+        const carrusel = li.querySelector(".carrusel");
+        const puntos = li.querySelectorAll(".puntos span");
+        if (puntos.length) {
+          carrusel.addEventListener("scroll", () => {
+            const i = Math.round(carrusel.scrollLeft / carrusel.clientWidth);
+            puntos.forEach((p, j) => p.classList.toggle("on", i === j));
+          }, { passive: true });
+        }
+        rejilla.appendChild(li);
+      });
+  }
+
+  document.querySelectorAll(".chip").forEach((chip) => {
+    chip.addEventListener("click", () => {
+      document.querySelectorAll(".chip").forEach((c) => c.setAttribute("aria-pressed", c === chip));
+      pintar(chip.dataset.filtro);
+    });
+  });
+
+  // Ver la foto en grande
+  const visor = document.getElementById("visor");
+  const visorImg = visor.querySelector("img");
+  rejilla.addEventListener("click", (e) => {
+    if (e.target.tagName !== "IMG") return;
+    visorImg.src = e.target.src;
+    visorImg.alt = e.target.alt;
+    visor.classList.add("abierto");
+  });
+  visor.addEventListener("click", () => visor.classList.remove("abierto"));
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") visor.classList.remove("abierto"); });
+
+  pintar("todas");
+</script>
+</body>
+</html>
